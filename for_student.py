@@ -1,6 +1,18 @@
 import streamlit as st
 from datetime import datetime
 from streamlit_gsheets import GSheetsConnection
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+credentials_dict = st.secrets["gcp_service_account"]
+
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+
+creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
+client = gspread.authorize(creds)
+
+sheet = client.open_by_url("YOUR_GOOGLE_SHEET_URL")
+worksheet = sheet.sheet1  # or worksheet by name
 
 st.title("Random Walk Input")
 
