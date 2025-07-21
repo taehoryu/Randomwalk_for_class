@@ -5,7 +5,7 @@ import streamlit as st
 st.write("Running Python from:", sys.executable)
 import matplotlib.pyplot as plt
 
-st.title("Random Walk Input and Ensemble Average")
+st.title("Random Walk Input and Ensemble Average!")
 
 # Use session state to hold data across reruns
 if "data" not in st.session_state:
