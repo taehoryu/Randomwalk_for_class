@@ -1,6 +1,6 @@
 import streamlit as st
 from datetime import datetime
-from streamlit_gsheets import GSheetsConnection
+#from streamlit_gsheets import GSheetsConnection
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
