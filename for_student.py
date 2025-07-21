@@ -11,7 +11,7 @@ scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/aut
 creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
 client = gspread.authorize(creds)
 
-sheet = client.open_by_url("YOUR_GOOGLE_SHEET_URL")
+sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U/edit?gid=0#gid=0")
 worksheet = sheet.sheet1  # or worksheet by name
 
 st.title("Random Walk Input")
