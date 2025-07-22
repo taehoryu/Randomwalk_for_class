@@ -1,6 +1,8 @@
 import streamlit as st
 from datetime import datetime
 from streamlit_gsheets import GSheetsConnection
+import gspread
+from google.oauth2.service_account import Credentials
 
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
