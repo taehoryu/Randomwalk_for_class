@@ -12,7 +12,7 @@ scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/aut
 creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
 client = gspread.authorize(creds)
 
-sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U/edit?gid=0#gid=0")
+sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U")
 worksheet = sheet.sheet1  # or worksheet by name
 
 st.title("Random Walk Input")
@@ -24,7 +24,7 @@ step_value = st.radio("Choose step", options=[1, -1], horizontal=True)
 if st.button("Submit"):
     if student:
         conn = st.connection("gsheets", type=GSheetsConnection)
-        sheet_url = "https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U/edit?gid=0#gid=0"
+        sheet_url = "https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U"
         df = conn.read(spreadsheet=sheet_url, worksheet="Sheet1")
         df = df._append({
             "timestamp": datetime.utcnow().isoformat(),
