@@ -4,4 +4,4 @@ pandas
 numpy
 gspread
 oauth2client
-streamlit_gsheets
+st-gsheets-connection
