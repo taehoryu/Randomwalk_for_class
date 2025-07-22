@@ -5,8 +5,8 @@ from streamlit_gsheets import GSheetsConnection
 st.title("Random Walk Input")
 
 # Load Google Sheet connection
-conn = st.connection("gsheets", type=GSheetsConnection)
-
+#conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.connection("gsheets", type="gspread")
 # Spreadsheet ID or full URL (either works)
 sheet_url = "https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U"
 
