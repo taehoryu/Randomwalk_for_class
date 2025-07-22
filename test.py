@@ -16,7 +16,7 @@ if st.button("Submit"):
             df = conn.read()#worksheet="Sheet1")
 
             # Append new data
-            df = df._append({
+            df = df.append({
                 "timestamp": datetime.utcnow().isoformat(),
                 "student": student,
                 "step_number": step,
