@@ -2,19 +2,24 @@ import streamlit as st
 from datetime import datetime
 #from streamlit_gsheets import GSheetsConnection
 import gspread
-from streamlit_gsheets import GSheetsConnection
-from oauth2client.service_account import ServiceAccountCredentials
+#from streamlit_gsheets import GSheetsConnection
+#from oauth2client.service_account import ServiceAccountCredentials
 from google.oauth2 import service_account
 
-credentials_dict = st.secrets["gcp_service_account"]
-credentials_dict = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"]
+# Create a connection object.
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
+    scopes=[
+        "https://www.googleapis.com/auth/spreadsheets","https://www.googleapis.com/auth/drive"
+    ],
 )
+conn = connect(credentials=credentials)
+client=gspread.authorize(credentials)
 
-scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+#scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
-creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
-client = gspread.authorize(creds)
+#creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
+#client = gspread.authorize(creds)
 
 sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U")
 worksheet = sheet.sheet1  # or worksheet by name
