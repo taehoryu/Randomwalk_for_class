@@ -24,8 +24,8 @@ if st.button("Submit"):
             }, ignore_index=True)
 
             # Write back to the sheet
-            conn.update(worksheet="Sheet1", data=df)
-            st.success("Submitted successfully.")
+ #           conn.update(worksheet="Sheet1", data=df)
+ #           st.success("Submitted successfully.")
         except Exception as e:
             st.error(f"Error submitting: {e}")
     else:
