@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import datetime
 #from streamlit_gsheets import GSheetsConnection
 import gspread
+from streamlit_gsheets import GSheetsConnection
 from oauth2client.service_account import ServiceAccountCredentials
 
 credentials_dict = st.secrets["gcp_service_account"]
