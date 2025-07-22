@@ -8,7 +8,7 @@ st.title("Random Walk Input")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 # Spreadsheet ID or full URL (either works)
-sheet_url = "1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U"
+sheet_url = "https://docs.google.com/spreadsheets/d/1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U"
 
 # Student input form
 student = st.text_input("Enter your name (or ID):")
