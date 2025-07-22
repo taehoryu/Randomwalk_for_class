@@ -4,8 +4,12 @@ from datetime import datetime
 import gspread
 from streamlit_gsheets import GSheetsConnection
 from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2 import service_account
 
 credentials_dict = st.secrets["gcp_service_account"]
+credentials_dict = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
 
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
