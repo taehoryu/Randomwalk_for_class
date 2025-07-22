@@ -19,7 +19,7 @@ if st.button("Submit"):
     if student:
         try:
             # Read existing data from Sheet1
-            df = conn.read(worksheet="Sheet1")
+            df = conn.read()#worksheet="Sheet1")
 
             # Append new data
             df = df._append({
