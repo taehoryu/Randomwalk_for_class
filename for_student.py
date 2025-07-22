@@ -24,8 +24,9 @@ step_value = st.radio("Choose step", options=[1, -1], horizontal=True)
 if st.button("Submit"):
     if student:
         conn = st.connection("gsheets", type=GSheetsConnection)
-        sheet_url = "1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U"
-        df = conn.read(spreadsheet=sheet_url, worksheet="Sheet1")
+#        sheet_url = "1pAuI5OXYC8zjLS4jAUFB7BCC49qiz_ZvHFQpEpyZ21U"
+#        df = conn.read(spreadsheet=sheet_url, worksheet="Sheet1")
+        df = conn.read(worksheet="Sheet1")
         df = df._append({
             "timestamp": datetime.utcnow().isoformat(),
             "student": student,
